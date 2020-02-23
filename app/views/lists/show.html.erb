@@ -5,17 +5,13 @@
             <%= f.text_field :description, :class => "new-todo", :placeholder => (@item.errors.full_messages_for(:description).first || "Enter a new item.") %>
             <%= f.submit :style => "display: none" %> 
         <% end %> 
-	</header>
+    </header>
+    
 	<section class="main">
-	    <input class="toggle-all" type="checkbox">
-        <label for="toggle-all">Mark all as complete</label>
-        
         <ul class="todo-list">
             <% @list.items.each do |item| %>
-            <li>
-                <div class="view">
-                    <label><%= item.description %></label>
-                </div>
-            </li>
+                <%= render :partial => "items/item_li", :locals => {:item => item} %>
             <% end %>
+        </ul>
     </section>
+</section> 

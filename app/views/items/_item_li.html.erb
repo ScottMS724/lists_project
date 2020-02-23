@@ -1,0 +1,11 @@
+<li class="<%= li_class_for_item(item) %>">
+    <div class="view">
+        <%= form_for([@list, item]) do |f| %>
+            <%= f.hidden_field :status, value: !item.complete? %>
+            <%= f.submit item.complete? ? "Mark incomplete." : "Mark complete." %>
+        <% end %> 
+
+        <label><%= item.description %></label>
+
+    </div>
+</li> 
