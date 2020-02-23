@@ -7,5 +7,7 @@
 
         <label><%= item.description %></label>
 
+        <%= button_to "X", list_item_path(item.list, item), :method => "delete", :class => "destroy" %>
+
     </div>
 </li> 
