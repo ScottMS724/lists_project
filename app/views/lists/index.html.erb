@@ -6,18 +6,18 @@
             <%= f.submit :style => "display: none" %> 
         <% end %> 
 	</header>
-			<section class="main">
-				<input id="toggle-all" class="toggle-all" type="checkbox">
-                <label for="toggle-all">Mark all as complete</label>
+	<section class="main">
+		<input id="toggle-all" class="toggle-all" type="checkbox">
+        <label for="toggle-all">Mark all as complete</label>
                 
-                <ul class="todo-list">
-                    <% @lists.each do |list| %>
-                    <li>
-                        <div class="view">
-                            <label><%= link_to list.name, list_path(list) %></label>
-                        </div>
-                    </li>
-                    <% end %> 
-                </ul>
-            </section>
+        <ul class="todo-list">
+            <% @lists.each do |list| %>
+            <li>
+                <div class="view">
+                    <label><%= link_to list.name, list_path(list) %></label>
+                </div>
+            </li>
+            <% end %> 
+        </ul>
+    </section>
 						
