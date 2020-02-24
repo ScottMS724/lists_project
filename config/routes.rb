@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     resources :items 
   end 
 
+  resources :users, :only => [:new, :create] 
+
   
   get 'items/create'
   

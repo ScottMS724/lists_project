@@ -5,7 +5,8 @@
             <%= f.text_field :name, :class => "new-todo", :placeholder => (@list.errors.full_messages_for(:name).first || "Enter a name for your new list.") %>
             <%= f.submit :style => "display: none" %> 
         <% end %> 
-	</header>
+    </header>
+    
 	<section class="main">  
         <ul class="todo-list">
             <% @lists.each do |list| %>
