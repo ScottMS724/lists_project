@@ -3,10 +3,10 @@ Rails.application.routes.draw do
     resources :items 
   end 
 
-  resources :users, :only => [:new, :create] 
+  resources :users, :only => [:new, :create]
 
-  
-  get 'items/create'
+  get '/login' => "sessions#new"
+  post '/sessions' => "sessions#create"
   
 
   root 'lists#index'
