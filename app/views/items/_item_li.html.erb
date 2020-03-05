@@ -5,7 +5,7 @@
             <%= f.submit item.complete? ? "Mark incomplete." : "Mark complete." %>
         <% end %> 
 
-        <label><%= item.description %></label>
+        <label><%= link_to item.description, list_items_path(item) %></label>
 
         <%= button_to "X", list_item_path(item.list, item), :method => "delete", :class => "destroy" %>
 
