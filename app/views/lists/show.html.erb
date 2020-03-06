@@ -12,6 +12,7 @@
             <% @list.items.each do |item| %>
                 <%= render :partial => "items/item_li", :locals => {:item => item} %>
             <% end %>
+            <%= link_to "Back to all my lists.", '/lists' %>
         </ul>
     </section>
 </section> 
