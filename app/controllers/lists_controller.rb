@@ -3,7 +3,7 @@ class ListsController < ApplicationController
 
     def index
         @list = List.new 
-        @lists = List.all 
+        @lists = @current_user.lists 
     end 
 
     def show
@@ -16,7 +16,7 @@ class ListsController < ApplicationController
         if @list.save 
             redirect_to list_url(@list)
         else 
-            @lists = List.all     
+            @lists = @current_user.lists      
             render :index 
         end 
     end 
