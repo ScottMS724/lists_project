@@ -12,7 +12,8 @@ class ListsController < ApplicationController
     end 
 
     def create
-        @list = List.new(list_params)
+        user = @current_user 
+        @list = user.lists.build(list_params)
         if @list.save 
             redirect_to list_url(@list)
         else 
