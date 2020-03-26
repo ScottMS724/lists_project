@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :lists do
     resources :items 
   end 
-  
+
+post '/lists/:list_id/items/:id/edit' => 'items#update'
+
   resources :users, :only => [:new, :create]
 
   get '/login' => "sessions#new"
