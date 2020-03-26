@@ -1,9 +1,31 @@
+<h1><u>Editing Item</u></h1> 
+
 <h1><%= @item.description %></h1>
-<p><h2><%= @item.status %></h2></p>
 
-<h3>This is the item edit view.</h3>
+<%= form_for(list_item_path(@item)) do |f| %>
+    <% if @item.errors.any? %>
+      <div class="error_messages">
+        <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+  
+        <ul>
+        <% @item.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_field :description %>
+    </div>
 
-#User will be able to check/uncheck categories for the item here.
+    #Checkboxes of all categories displayed here for User to modify.
+
+    <div class="actions">
+    <%= f.submit 'Save Changes' %>
+    </div>
+<% end %>
 
 <p>
 <%= link_to "Back to list.", @item.list %>

@@ -1,6 +1,8 @@
 <h1><%= @item.description %></h1>
-<p><h2><%= @item.status %></h2></p>
-#current categories of items will display here.
+<p><h2>Status: <%= @item.status %></h2></p>
+
+<h3>Categories:</h3>
+#current assigned categories displayed here.
 
 <p>
 <%= link_to "Edit the categories for this item.", edit_list_item_path(@item) %>
