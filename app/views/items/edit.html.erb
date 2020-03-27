@@ -2,7 +2,7 @@
 
 <h1><%= @item.description %></h1>
 
-<%= form_for(list_item_path(@item)) do |f| %>
+<%= form_for @item, url: {action: "update"} do |f| %>
     <% if @item.errors.any? %>
       <div class="error_messages">
         <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -28,7 +28,7 @@
     #Checkboxes of all categories displayed here for User to modify.
 
     <div class="actions">
-    <%= f.submit 'Save Changes' %>
+    <%= f.submit 'Update Item' %>
     </div>
 <% end %>
 
