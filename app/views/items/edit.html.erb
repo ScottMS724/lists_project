@@ -25,7 +25,14 @@
       <%= f.text_field :status %>
     </div>
 
-    #Checkboxes of all categories displayed here for User to modify.
+    <div>
+            <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
+                <p>
+                    <%= b.label %>
+                    <%= b.check_box %>
+                </p>
+            <% end %> 
+    </div>
 
     <div class="actions">
     <%= f.submit 'Update Item' %>
