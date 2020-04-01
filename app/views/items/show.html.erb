@@ -2,7 +2,11 @@
 <p><h2>Status: <%= @item.status %></h2></p>
 
 <h3>Categories:</h3>
-#current assigned categories displayed here.
+<ul>
+    <% @item.categories.each do |category| %>
+        <li><%= category.name %></li>
+    <% end %> 
+</ul>
 
 <p>
 <%= link_to "Edit this item.", edit_list_item_path(@item) %>
