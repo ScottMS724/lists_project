@@ -26,12 +26,12 @@
     </div>
 
     <div>
-            <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
-                <p>
-                    <%= b.label %>
-                    <%= b.check_box %>
-                </p>
-            <% end %> 
+        <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
+            <p>
+                <%= b.label %>
+                <%= b.check_box %>
+            </p>
+        <% end %> 
     </div>
 
     <div class="actions">
