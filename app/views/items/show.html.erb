@@ -8,10 +8,10 @@
     <% end %> 
 </ul>
 
-<h4>Item Category / Fragile?:</h4>
+<h4>Item fragility depending on category:</h4>
 <ul>
         <% @item.categorizations.each do |categorization| %>
-            <li><%= categorization.category_name %> (<%= categorization.fragile ? "Yes" : "No" %>)</li>   
+            <li><%= categorization.category_name %> (<%= categorization.fragile ? "Yes" : "No" %>)</li>
         <% end %> 
 </ul>
 

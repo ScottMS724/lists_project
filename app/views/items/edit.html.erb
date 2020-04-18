@@ -2,6 +2,8 @@
 
 <h1><%= @item.description %></h1>
 
+
+
 <%= form_for @item, url: {action: "update"} do |f| %>
     <% if @item.errors.any? %>
       <div class="error_messages">
@@ -26,6 +28,7 @@
     </div>
 
     <div>
+        <h4>Item Categories:</h4>
         <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
             <p>
                 <%= b.label %>
@@ -34,12 +37,22 @@
         <% end %> 
     </div>
 
-    #User will be able to label item/category combination fragile or not here.
+    <div>
+        <h4>Check if fragile:</h4>
+        <%= f.collection_check_boxes(:categorization_ids, @item.categorizations.all, :fragile, :category_name) do |b| %>
+            <p>
+                <%= b.label %>
+                <%= b.check_box %>
+            </p>
+        <% end %> 
+    </div>
 
     <div class="actions">
     <%= f.submit 'Update Item' %>
     </div>
 <% end %>
+
+
 
 <p>
 <%= link_to "Back to item.", list_item_path %>  
