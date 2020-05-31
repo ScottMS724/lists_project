@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
     belongs_to :list
     has_many :categorizations 
-    has_many :categories, :through => :categorizations 
+    has_many :categories, :through => :categorizations  
     validates :description, :presence => true 
 
     STATUS = {

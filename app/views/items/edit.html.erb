@@ -39,12 +39,12 @@
 
     <div>
         <h4>Check if fragile:</h4>
-        <%= f.collection_check_boxes(:categorization_ids, @item.categorizations.all, :fragile, :category_name) do |b| %>
-            <p>
-                <%= b.label %>
-                <%= b.check_box %>
-            </p>
-        <% end %> 
+        <%= f.collection_check_boxes(:categorization_ids, @item.categorizations.all, Categorizations.all, :category_name) do |b| %>
+          <p>
+              <%= b.label %>
+              <%= b.check_box %>
+          </p>
+      <% end %> 
     </div>
 
     <div class="actions">
