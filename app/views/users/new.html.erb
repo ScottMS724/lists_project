@@ -3,11 +3,10 @@
         <h1>Sign Up</h1>
         <%= form_for(@user) do |f| %> 
             <%= f.text_field :email, :class => "new-todo", :placeholder => (@user.errors.full_messages_for(:email).first || "Register with your e-mail.") %>
-            <%= f.text_field :password, :class => "new-todo", :placeholder => (@user.errors.full_messages_for(:password).first || "Choose your password.") %>
+            <%= f.password_field :password, :class => "new-todo", :placeholder => (@user.errors.full_messages_for(:password).first || "Choose your password.") %>
             <%= f.submit %> 
         <% end %> 
     </header>
 
-    <footer class="footer">
-    </footer>
+    <p><%= link_to "Already signed up? Login here!", "/login" %></p>
 </section> 
