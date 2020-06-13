@@ -38,14 +38,15 @@
     </div>
 
     <div>
-        <h4>Check if fragile:</h4>
-        <%= f.collection_check_boxes(:categorization_ids, @item.categorizations.all, Categorizations.all, :category_name) do |b| %>
-          <p>
-              <%= b.label %>
-              <%= b.check_box %>
-          </p>
-      <% end %> 
-    </div>
+      <h4>Check which category is fragile:</h4>
+      <%= f.fields_for(:categorizations, @item.categorizations) do |ff| %>
+        <p>
+          <%= ff.object.category_name %> 
+          <%= ff.label :fragile %>
+          <%= ff.check_box :fragile %>
+        </p> 
+      <% end %>
+    </div> 
 
     <div class="actions">
     <%= f.submit 'Update Item' %>

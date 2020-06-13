@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
   private
     
     def item_params 
-      params.require(:item).permit(:description, :status, :category_ids => [], :categorization_ids => [])
+      params.require(:item).permit(:description, :status, :category_ids => [], :categorization_ids => [], :categorizations_attributes => {})
     end 
 
 end

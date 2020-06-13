@@ -3,6 +3,7 @@ class Item < ApplicationRecord
     has_many :categorizations 
     has_many :categories, :through => :categorizations  
     validates :description, :presence => true, length: { maximum: 30 }
+    accepts_nested_attributes_for :categorizations 
 
     STATUS = {
         :complete => true,
@@ -16,5 +17,11 @@ class Item < ApplicationRecord
     def incomplete?
         self.status == STATUS[:incomplete]
     end 
+
+    def categorizations_attributes=(attributes)
+        # Process the attributes hash
+    end
+
+    
 
 end
