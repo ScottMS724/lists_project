@@ -39,7 +39,7 @@
 
     <div>
       <h4>Check which category is fragile:</h4>
-      <%= f.fields_for(:categorizations, @item.categorizations) do |ff| %>
+      <%= f.fields_for :categorizations, @item.categorizations do |ff| %>
         <p>
           <%= ff.object.category_name %> 
           <%= ff.label :fragile %>

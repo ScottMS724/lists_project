@@ -18,10 +18,6 @@ class Item < ApplicationRecord
         self.status == STATUS[:incomplete]
     end 
 
-    def categorizations_attributes=(attributes)
-        # Process the attributes hash
-    end
-
     
 
 end
