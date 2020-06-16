@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   resources :lists do
-    resources :items 
+    resources :items do 
+      member do 
+        get :edit_join
+        put :update_join 
+      end 
+    end 
   end 
 
   resources :users, :only => [:new, :create]

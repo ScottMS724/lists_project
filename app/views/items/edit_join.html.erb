@@ -2,8 +2,6 @@
 
 <h1><%= @item.description %></h1>
 
-
-
 <%= form_for @item, url: {action: "update"} do |f| %>
     <% if @item.errors.any? %>
       <div class="error_messages">
@@ -16,33 +14,22 @@
         </ul>
       </div>
     <% end %>
-  
-    <div class="field">
-      <%= f.label :description %><br />
-      <%= f.text_field :description %>
-    </div>
 
-    <div class="field">
-      <%= f.label :status %><br />
-      <%= f.text_field :status %>
-    </div>
+<div>
+    <h4>For this item, check which category is fragile:</h4>
+    <%= f.fields_for :categorizations, @item.categorizations do |ff| %>
+    <p>
+        <%= ff.object.category_name %> 
+        <%= ff.label :fragile %>
+        <%= ff.check_box :fragile %>
+    </p> 
+    <% end %>
+</div> 
 
-    <div>
-        <h4>Item Categories:</h4>
-        <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
-            <p>
-                <%= b.label %>
-                <%= b.check_box %>
-            </p>
-        <% end %> 
-    </div>
-
-    <div class="actions">
-      <%= f.submit 'Update Item' %>
-    </div>
+<div class="actions">
+    <%= f.submit 'Update Item' %>
+</div>
 <% end %>
-
-
 
 <p>
 <%= link_to "Back to item.", list_item_path %>  
