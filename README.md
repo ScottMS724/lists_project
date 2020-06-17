@@ -1,10 +1,10 @@
 <h2>Rails MVC Project - Flatiron School of Coding</h2>
 
-This Rails application is an app built in the Rails MVC format. The app allows Users to sign up and log in, create new lists, add items to lists, and mark each item as complete or incomplete.
+This Rails application is built in the Rails MVC format. The app allows users to sign up and log in, create new lists, add items to lists, mark each item as complete or incomplete, and modify certain attributes about each item, such as its categories and fragility. 
 
 <h3>Usage</h3>
 
-To use this app, just clone from GitHub, cd into lists, and run bundle / rake db:migrate. 'rails s' will start the server locally.
+To use this app, clone from GitHub, cd into lists, and run bundle / rake db:migrate. 'rails s' will start the server locally.
 
 <h3>Contributing</h3>
 
